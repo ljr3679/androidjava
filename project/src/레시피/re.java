@@ -27,4 +27,6 @@ public class re {
 		f.getContentPane().add(textArea);
 	}
 
+	
+
 }
