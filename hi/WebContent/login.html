@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>로그인</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/NewFile.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+  function check(){
+		id = document.getElementById("id").value
+		pw = document.getElementById("pw").value
+		if(id.length == 0) {
+			document.getElementById('result1').innerHTML = '<font color=red><b>ⓘ AppleMango ID가 누락되었습니다.</b></font>'
+		}else if(id.length >= 1){
+			document.getElementById('result1')
+		}
+	  	if(pw.length == 0){
+			document.getElementById('result2').innerHTML = '<font color=red><b>ⓘ 암호가 누락되었습니다.</b></font>'
+		}else if(pw.length >= 1){
+			document.getElementById('result2')
+		}
+  }
+  
+  </script>
+    
+</head>
+<body>
+<div class="container">
+	<h1>로  그  인.</h1>
+    <form action="login.jsp">
+    <div class="form-group">
+      <input type="email" class="form-control" name="id"  id="id"
+      placeholder="AppleMang ID" required>
+      <div id='result1'></div>
+    </div>
+    
+    <div class="form-group">
+      <input type="password" class="form-control" name="pw"  id="pw"
+      placeholder="암호" required>
+       <div id='result2'></div>
+    </div> 
+    <label for="pwd">AppleMango ID는 iTunes, App Store, iCloud에 로그인할 때 사용하는 이메일 주소입니다.</label>
+    
+    
+    <div class="form-group">
+      <input onclick = "check()"  type="submit" class="form-control1" value="로  그  인" name="login">
+    </div>
+    <label><a href="id.html">AppleMango ID 또는 암호를 잊으셨습니까?</a></label><br>
+    
+    <label><a href="sign.html">AppleMango ID가 없으신가요? 지금 생성.</a></label>
+    
+    </form>
+    </div>
+</body>
+</html>

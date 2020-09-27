@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>회원정보수정</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/NewFile.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <script>
+  function check(){
+	 	id = document.getElementById("id").value
+		birth = document.getElementById("name").value
+		name = document.getElementById("birth").value
+		tel = document.getElementById("tel").value
+		pw = document.getElementById("pw").value
+		pw1 = document.getElementById("pw1").value
+		if (name.length == 0) {
+			document.getElementById('result2').innerHTML = '<font color=red><b>ⓘ 이름을 입력하세요.</b></font>'
+		}else if (name.length <= 5)  {
+			document.getElementById('result2').innerHTML = '<font color=red><b>ⓘ 이름을 2글자 이상 입력하세요.</b></font>'
+		}
+	  	if(birth.length == 0){
+			document.getElementById('result3').innerHTML = '<font color=red><b>ⓘ 유효한 생년월일을 입력하십시오.</b></font>'
+		}
+		if(id.length == 0){
+			document.getElementById('result1').innerHTML = '<font color=red><b>ⓘ AppleMango ID로 사용할 유효한 이메일 주소를 입력하십시오.</b></font>'
+		}
+		if(pw.length == 0){
+			document.getElementById('result5').innerHTML = '<font color=red><b>ⓘ 암호를 재입력하십시오.</b></font>'
+		}else if (pw.length <= 5)  {
+			document.getElementById('result5').innerHTML = '<font color=red><b>ⓘ 암호를 5자 이상 재입력하십시오.</b></font>'
+		}
+		if (pw != pw1){
+			document.getElementById('result5').innerHTML = '<font color=red><b>ⓘ 입력한 암호가 일치하지 않습니다.</b></font>'
+		}
+		if(tel.length == 0){
+			document.getElementById('result4').innerHTML = '<font color=red><b>ⓘ 유효한 전화번호를 입력하십시오.</b></font>'	
+		}	
+  }
+  
+  
+  
+		
+  </script>
+</head>
+<body>
+
+<style>
+
+p{
+ width : 700px;
+ text-align:center;
+ font-weight: bold;
+float:center;
+}
+label.a{
+	width : 100%;
+	float:center;
+	text-align:center;
+}
+label.b{
+	font-size: 35px;
+	width : 100px;
+	float:left;
+	text-align:left;
+}
+
+label{
+	width : 800px;
+	float:right;
+}
+.form-control{
+	width : 800px;
+	float:right;
+}
+
+</style>
+
+<div class="container">
+  
+  <input type="image" src="images/2.JPG"  alt="AppleMango ID 생성" width="100%">
+  <label class="a">고객님의 AppleMango ID는 입니다.</label>
+  <label class="a">AppleMang ID로 모든 AppleMango 제품 및 서비스에 로그인하십시오.<br></label>
+  <label class="b">계정</label><br>
+  
+  <form action="information.jsp">
+  <div class="form-group">
+      <label for="id">새 AppleMango ID로 사용될 주소입니다.</label>
+      <input type="email" class="form-control" name="id" id="id"
+      placeholder="ex) asdf1234@google.com" >
+      <div id='result1'></div>
+    </div>
+    <div class="form-group">
+      <label for="name">이름:</label>
+      <input type="text" class="form-control" name="name" id="name" >
+      <div id='result2'></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="birth">생년월일:</label><br>
+      <label for="birth" style="color: gray">일부 AppleMango 서비스를 활성화하려면 올바른 생년월일을 제공해야 합니다.</label>
+      <input type="date" class="form-control" name="birth" id="birth">
+      <div id='result3'></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="tel">전화번호:</label>
+      <input type="tel" class="form-control" name="tel"
+      placeholder="ex) 010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" id="tel">
+      <div id='result4'></div>      
+    </div>
+    
+    <div class="form-group">
+      <label for="pw">새암호:</label><br>  
+      <label class="b">보안</label><br>
+      <label for="pw" style="color: gray">추측하기 쉽거나 다른 웹사이트에서 사용한 암호는 선택하지 마십시오.</label>
+      <input type="password" class="form-control" name="pw" id="pw">
+      
+    </div>
+    <div class="form-group">
+      <label for="pw1">암호확인:</label>
+      <input type="password" class="form-control" name="pw1"  id="pw1">
+      <div id='result5'></div>
+    </div> 
+    
+    <label class="a">항상 사용할 수 있는 전화번호를 입력하십시오. 새 기기나 웹 브라우저에 로그인할 때</label>
+    <label class="a">해당 전화번호를 사용하여 신원을 확인합니다. 메시지 또는 데이터 요금이 적용될 수 있습니다.</label>
+    
+    <div class="form-group">
+      <input onclick = "check()" type="submit" class="form-control1" value="정 보 수 정" name="login">
+    </div>
+    
+    
+  </form>
+</div>
+
+</body>
+</html>

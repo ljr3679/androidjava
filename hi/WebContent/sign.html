@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>회원가입</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/NewFile.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+  function check(){
+	  	name = document.getElementById("name").value
+		birth = document.getElementById("birth").value
+		id = document.getElementById("id").value
+		pw = document.getElementById("pw").value
+		pw1 = document.getElementById("pw1").value
+		tel = document.getElementById("tel").value
+		if (name.length == 0) {
+			document.getElementById('result1').innerHTML = '<font color=red><b>ⓘ 이름을 입력하세요.</b></font>'
+		}else if (name.length <= 5)  {
+			document.getElementById('result1').innerHTML = '<font color=red><b>ⓘ 이름을 2글자 이상 입력하세요.</b></font>'
+		}
+	  	if(birth.length == 0){
+			document.getElementById('result2').innerHTML = '<font color=red><b>ⓘ 유효한 생년월일을 입력하십시오.</b></font>'
+		}
+		if(id.length == 0){
+			document.getElementById('result3').innerHTML = '<font color=red><b>ⓘ AppleMango ID로 사용할 유효한 이메일 주소를 입력하십시오.</b></font>'
+		}
+		if(pw.length == 0){
+			document.getElementById('result4').innerHTML = '<font color=red><b>ⓘ 암호를 재입력하십시오.</b></font>'
+		}else if (pw.length <= 5)  {
+			document.getElementById('result4').innerHTML = '<font color=red><b>ⓘ 암호를 5자 이상 재입력하십시오.</b></font>'
+		}
+		if (pw != pw1){
+			document.getElementById('result4').innerHTML = '<font color=red><b>ⓘ 입력한 암호가 일치하지 않습니다.</b></font>'
+		}
+		if(tel.length == 0){
+			document.getElementById('result5').innerHTML = '<font color=red><b>ⓘ 유효한 전화번호를 입력하십시오.</b></font>'	
+		}	
+  }
+  
+  
+  
+		
+  </script>
+</head>
+<body>
+
+<style>
+p{
+ text-align:center;
+ font-weight: bold;
+}
+
+</style>
+
+<div class="container">
+  
+  <input type="image" src="images/1.JPG"  alt="AppleMango ID 생성" width="100%">
+  <p>하나의 AppleMango ID로 모든 AppleMango서비스를 이용할 수 있습니다.</p>
+  <p>AppleMango ID를 가지고 계십니까?</p>
+  
+  <form action="sign.jsp">
+  
+    <div class="form-group">
+      <label for="usr">이름:</label>
+      <input type="text" class="form-control" name="name" id =name>
+      <div id='result1'></div>
+    </div>
+    
+    
+    <div class="form-group">
+    <label for="usr">국가/지역:</label>
+    <select class="form-control" name="country">
+        <option>대한민국</option>
+		<option>나이지리아</option>
+		<option>남극</option>
+		<option>남아프리카공화국</option>
+		<option>네덜란드</option>
+		<option>뉴질랜드 </option>
+		<option>대만</option>
+		<option>독일</option>
+		<option>말레이시아</option>
+		<option>멕시코</option>
+		<option>베트남</option>
+		<option>브라질</option>
+		<option>사우디아라비아</option>
+		<option>세네갈</option>
+		<option>수단</option>
+		<option>스위스</option>
+		<option>스페인</option>
+		<option>싱가포르</option>
+		<option>아랍에미리트</option>
+		<option>아르헨티나</option>
+		<option>에디오피아</option>
+		<option>영국</option>
+		<option>요르단</option>
+		<option>이란</option>
+		<option>이스라엘</option>
+		<option>이집트</option>
+		<option>이탈리아</option>
+		<option>일본</option>
+		<option>중국</option>
+		<option>칠레</option>
+		<option>카타르</option>
+		<option>케냐</option>
+		<option>콜롬비아</option>
+		<option>쿠웨이트</option>
+		<option>태국</option>
+		<option>튀니지</option>
+		<option>페루</option>
+		<option>폴란드</option>
+		<option>프랑스</option>
+		<option>피지</option>
+		<option>필리핀</option>
+		<option>호주</option>
+		<option>홍콩</option>
+
+      </select>
+      </div>
+    <div class="form-group">
+      <label for="pwd">생년월일:</label>
+      <input type="date" class="form-control" name="birth" id ="birth">
+      <div id='result2'></div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">새 AppleMango ID로 사용될 주소입니다.</label>
+      <input type="email" class="form-control" name="id" id ="id"
+      placeholder="ex) asdf1234@google.com" required>
+      <div id='result3'></div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">암호:</label>
+      <input type="password" class="form-control" name="pw" id="pw">
+    </div>
+    <div class="form-group">
+      <label for="pwd">암호확인:</label>
+      <input type="password" class="form-control" name="pw1" id="pw1">
+      <div id='result4'></div>
+    </div>
+    
+    
+    
+    
+    <div class="form-group">
+      <label for="pwd">전화번호:</label>
+      <select class="form-control" name="country1">
+        <option>+82(대한민국)</option>
+		<option>+234(나이지리아)</option>
+		<option>+672(남극)</option>
+		<option>+27(남아프리카공화국)</option>
+		<option>+31(네덜란드)</option>
+		<option>+64(뉴질랜드)</option>
+		<option>+886(대만)</option>
+		<option>+49(독일)</option>
+		<option>+60(말레이시아)</option>
+		<option>+52(멕시코)</option>
+		<option>+84(베트남)</option>
+		<option>+55(브라질)</option>
+		<option>+966(사우디아라비아)</option>
+		<option>+221(세네갈)</option>
+		<option>+249(수단)</option>
+		<option>+41(스위스)</option>
+		<option>+34(스페인)</option>
+		<option>+65(싱가포르)</option>
+		<option>+971(아랍에미리트)</option>
+		<option>+54(아르헨티나)</option>
+		<option>+251(에디오피아)</option>
+		<option>+44(영국)</option>
+		<option>+962(요르단)</option>
+		<option>+98(이란)</option>
+		<option>+972(이스라엘)</option>
+		<option>+20(이집트)</option>
+		<option>+39(이탈리아)</option>
+		<option>+81(일본)</option>
+		<option>+86(중국)</option>
+		<option>+56(칠레)</option>
+		<option>+974(카타르)</option>
+		<option>+254(케냐)</option>
+		<option>+57(콜롬비아)</option>
+		<option>+965(쿠웨이트)</option>
+		<option>+66(태국)</option>
+		<option>+90(터키)</option>
+		<option>+216(튀니지)</option>
+		<option>+51(페루)</option>
+		<option>+48(폴란드)</option>
+		<option>+33(프랑스)</option>
+		<option>+679(피지)</option>
+		<option>+63(필리핀)</option>
+		<option>+61(호주)</option>
+		<option>+852(홍콩)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="pwd">전화번호:</label>
+      <input type="tel" class="form-control" name="tel" id="tel"
+      placeholder="ex) 010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+      <div id='result5'></div>
+    </div>
+    <p>항상 사용할 수 있는 전화번호를 입력하십시오. 새 기기나 웹 브라우저에 로그인할 때</p>
+    <p>해당 전화번호를 사용하여 신원을 확인합니다. 메시지 또는 데이터 요금이 적용될 수</p>
+    <p>있습니다.</p>
+    <div class="form-group">
+      <input onclick = "check()" type="submit" class="form-control1" value="I D 생 성" name="login">
+    </div>
+    
+    
+  </form>
+</div>
+
+</body>
+</html>
