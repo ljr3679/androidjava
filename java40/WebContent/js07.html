@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+function check(){
+		idValue = document.getElementById("id").value
+		pwValue = document.getElementById("pw").value
+		pw1Value = document.getElementById("pw1").value
+		if (idValue.length == 0) {
+			alert("입력이 없습니다. 확인 하여 입력 해주셔요")
+		}else if (idValue.length <= 5)  {
+			document.getElementById('result1').innerHTML = '<font color=red><b>5글자 이상 써주셔야 해요.</b></font>'
+		}else{
+			location.href = "equal.jsp?id=" + idValue + "&pw=" + pwValue
+		}
+		
+}
+function check1(){
+	idValue = document.getElementById("id").value
+	pwValue = document.getElementById("pw").value
+	pw1Value = document.getElementById("pw1").value
+	if(pwValue == pw1Value ){
+		location.href = "login.jsp?id=" + idValue + "&pw=" + pwValue
+	}else{
+		
+		document.getElementById('result').innerHTML = '<font color=red><b>패스워드가 다름.</b></font>'
+	}
+	
+}
+</script>
+<body>
+	<h3>화원가입</h3>
+	<hr color="red">
+	아이디 : <input type ="text" name="id" id = "id"><br>
+	<div id='result1'></div>
+	<button onclick = "check()">아이디 중복 확인</button><br>
+	비밀번호 : <input type ="password" name="pw" id = "pw"><br>
+	비밀번호확인 : <input type ="password" name="pw1" id = "pw1">
+	<button onclick = "check1()"> 로그인 </button><br>
+	<hr color="red">
+	<div id='result'></div>
+	
+	
+	
+</body>
+</html>
